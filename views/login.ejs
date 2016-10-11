@@ -1,0 +1,46 @@
+<%- include header %>
+<style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 200%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+</style>
+<div class="header">
+  <div class="am-g">
+    <h1>说说</h1>
+    <p>说说说说说说</p>
+  </div>
+  <hr />
+</div>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <h3>登录</h3>
+    <hr>
+   
+    <form  class="am-form" id="regist-form">
+     <div class="am-form-group">
+      <label for="name">用户名:</label>
+      <input type="text" name="username" id="username" value="" class="am-form-field">
+      </div>
+   <div class="am-form-group">
+      <label for="password">密码:</label>
+      <input type="password" name="password" id="password" value="" class="am-form-field">
+   </div>
+     
+      <div class="am-cf"  style="margin-top:20px;">
+        <input type="button"  id="doLogin" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">
+     
+      </div>
+    </form>
+    <hr>
+    <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+  </div>
+</div>
+<%- include footer %>

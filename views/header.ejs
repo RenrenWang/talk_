@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="alternate icon" type="image/png" href="i/favicon.png">
+		<link rel="stylesheet" href="css/amazeui.min.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+	</head>
+
+	<body>
+
+		</div>
+
+		<header class="am-topbar" style="margin-bottom:0;">
+			<div class="am-container">
+				<h1 class="am-topbar-brand">
+      <a href="/">说说</a>
+    </h1>
+
+				<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+				<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+					<ul class="am-nav am-nav-pills am-topbar-nav">
+						<li <% if(active=="index" ){%> class="am-active"
+							<%}%>>
+							<a href="/">全部说说</a>
+						</li>
+						<li <% if(active=="person" ){%> class="am-active"
+							<%}%>>
+							<a href="/person">我的说说</a>
+						</li>
+
+					</ul>
+
+					<% if(!login){%>
+					<div class="am-topbar-right">
+						<a href="/login" class="am-btn am-btn-primary am-topbar-btn am-btn-sm am-block">登录</a>
+					</div>
+
+					<div class="am-topbar-right">
+						<a href="/regist" class="am-btn am-btn-primary am-topbar-btn am-btn-sm">注册</a>
+					</div>
+					<%} else{%>
+
+					<div class="am-topbar-right">
+						<div class="am-dropdown" style="cursor: pointer;" data-am-dropdown="{boundary: '.am-topbar'}">
+							<a class="am-dropdown-toggle" data-am-dropdown-toggle style="line-height:50px">欢迎，
+								<%=username%><span class="am-icon-caret-down" style="margin-left:8px;"></span></a>
+							<ul class="am-dropdown-content">
+								<li>
+									<a href="/setavatar">设置个人信息</a>
+								</li>
+								<li>
+									<a href="/quit">退出</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<% } %>
+			</div>
+		</header>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="alternate icon" type="image/png" href="i/favicon.png">
+		<link rel="stylesheet" href="css/amazeui.min.css" />
+		<link rel="stylesheet" href="css/mystyle.css" />
+	</head>
+
+	<body>
+     <form action="/dosetavatar"  method="post" enctype="multipart/form-data" class="am-text-center">
+		<div class="am-form-group am-form-file">
+			<button type="button" class="am-btn am-btn-danger am-btn-sm">
+                   <i class="am-icon-cloud-upload"></i> 选择要上传的文件
+			</button>
+			<input id="doc-form-file" type="file" name="file" multiple>
+		</div>
+		<div id="file-list"></div>
+		<input  type="submit"  class="am-btn am-btn-danger" id="submit"/>
+    </form>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="js/amazeui.min.js"></script>
+		<script>
+			$(function() {
+				$('#submit').hide();
+				$('#doc-form-file').on('change', function() {
+					var fileNames = '<p class="am-badge">' + this.files[0]['name']+ '</p><img class="am-block am-center am-margin-vertical"  src="/avatar/'+this.files[0]['name']+'"/>';
+					console.log(this.files[0]['name']);
+//					$.each(this.files, function() {
+//						fileNames += ;
+//					});
+					$('#file-list').html(fileNames);
+					$('#submit').show();
+				});
+			});
+		</script>
+	</body>
+
+</html>
